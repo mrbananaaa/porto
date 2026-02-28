@@ -1,5 +1,6 @@
 import { LineBreak } from "@/components/common/line-break";
 import { Button } from "@/components/ui/button";
+import { Section } from "@/components/common/section";
 
 const PLATFORM_SECTION = [
   [
@@ -33,10 +34,10 @@ const SkillSection = () => {
     <div className="grid grid-cols-2 gap-8 max-w-7xl">
       {PLATFORM_SECTION.map(([title, list], i) => (
         <div key={i} className="flex flex-col space-y-4">
-          <div className="font-head-main font-medium text-fg-main text-[30px]">
+          <div className="font-head-main font-medium text-fg-main text-2xl md:text-3xl">
             {title}
           </div>
-          <ul className="list-disc ml-6 font-paragraph text-fg-sec text-xl">
+          <ul className="list-disc ml-6 font-paragraph text-fg-sec text-sm md:text-xl">
             {list.map((text, i) => (
               <li key={i}>{text}</li>
             ))}
@@ -73,9 +74,9 @@ const ContactSection = () => {
 const LandingRoute = () => {
   return (
     <>
-      <section className="flex py-5 md:py-52">
+      <Section>
         <div className="flex flex-col space-y-2">
-          <h1 className="flex flex-col font-head-main font-semibold text-4xl text-fg-main md:text-6xl lg:text-[160px]">
+          <h1 className="flex flex-col font-head-main font-semibold text-fg-main text-[40px] md:text-[90px] lg:text-[100px] xl:text-[120px] 2xl:text-[160px]">
             <span>Passionate</span>
             <span>Craftsmanship,</span>
           </h1>
@@ -84,78 +85,86 @@ const LandingRoute = () => {
             ChatGPT prompt.
           </p>
         </div>
-      </section>
+      </Section>
       <LineBreak />
-      <section className="flex flex-col space-y-8 md:py-52">
-        <div className="font-head-sec font-medium lg:text-[65px] max-w-6xl leading-snug">
-          <span className="text-accent">Full-Stack Engineer</span> focused on
-          systems, typed queries, and{" "}
-          <span className="text-accent">scalable architectures</span>.
+      <Section>
+        <div className="flex flex-col space-y-8">
+          <div className="font-head-sec font-medium text-2xl md:text-6xl lg:text-[65px] max-w-6xl leading-snug">
+            <span className="text-accent">Full-Stack Engineer</span> focused on
+            systems, typed queries, and{" "}
+            <span className="text-accent">scalable architectures</span>.
+          </div>
+          <p className="font-paragraph text-fg-sec text-sm md:text-xl lg:text-[24px] max-w-3xl">
+            I design clean APIs, architect real-time infrastructures, and prefer
+            predictable data flow end to end.
+          </p>
         </div>
-        <p className="font-paragraph text-fg-sec text-xl max-w-3xl">
-          I design clean APIs, architect real-time infrastructures, and prefer
-          predictable data flow end to end.
-        </p>
-      </section>
+      </Section>
       <LineBreak />
-      <section className="flex flex-col md:py-52 space-y-10">
-        <div className="flex flex-col space-y-6">
-          <div className="font-head-sec text-accent text-[35px]">What I Do</div>
-          <div className="font-head-main font-medium text-fg-main lg:text-[65px] underline underline-offset-3 decoration-accent/60">
-            Platform & Systems I Build on
+      <Section>
+        <div className="flex flex-col space-y-10 py-8">
+          <div className="flex flex-col space-y-6">
+            <h4 className="font-head-sec text-accent text-xl md:text-[35px]">What I Do</h4>
+            <h3 className="font-head-main font-medium text-fg-main text-3xl md:text-5xl lg:text-[65px] underline underline-offset-3 decoration-accent/60">
+              Platform & Systems I Build on
+            </h3>
+          </div>
+          <SkillSection />
+          <p className="font-paragraph text-fg-sec text-sm md:text-xl max-w-3xl">
+            I prefer explicit over magic; structure and typed data over
+            unpredictable orms.
+          </p>
+        </div>
+      </Section>
+      <LineBreak />
+      <Section>
+        <div className="flex flex-col space-y-10 w-full">
+          <div className="w-full font-head-main font-medium text-fg-main text-3xl md:text-5xl lg:text-[65px] underline underline-offset-3 decoration-accent/60">
+            Selected Works
+          </div>
+          <div className="bg-gray-300 flex justify-center items-center h-[60svh] rounded-2xl">
+            <span className="font-head-main font-medium text-fg-sec">
+              Comin Soon, Stay tuned!
+            </span>
           </div>
         </div>
-        <SkillSection />
-        <p className="font-paragraph text-fg-sec text-xl max-w-3xl">
-          I prefer explicit over magic; structure and typed data over
-          unpredictable orms.
-        </p>
-      </section>
+      </Section>
       <LineBreak />
-      <section className="flex flex-col md:py-28 space-y-10">
-        <div className="font-head-main font-medium text-fg-main lg:text-[65px] underline underline-offset-3 decoration-accent/60">
-          Selected Works
-        </div>
-        <div className="bg-gray-300 flex justify-center items-center h-[60svh] rounded-2xl">
-          <span className="font-head-main font-medium text-fg-sec">
-            Comin Soon, Stay tuned!
-          </span>
-        </div>
-      </section>
-      <LineBreak />
-      <section className="flex flex-col md:py-52 space-y-8">
-        <div className="flex flex-col items-center">
-          <div>
-            <div className="font-head-main font-medium text-fg-main lg:text-[65px] underline underline-offset-3 decoration-accent/60">
-              Let's Build Something Together.
+      <Section>
+        <div className="w-full flex flex-col space-y-8">
+          <div className="flex flex-col items-center">
+            <div className="flex flex-col space-y-2">
+              <div className="font-head-main font-medium text-fg-main text-3xl md:text-5xl lg:text-[65px] underline underline-offset-3 decoration-accent/60">
+                Let's Build Something Together.
+              </div>
+              <p className="font-paragraph text-fg-sec text-md md:text-2xl max-w-3xl">
+                If you’re working on systems that require clarity, reliability, or
+                real-time architecture - let’s talk.
+              </p>
             </div>
-            <p className="font-paragraph text-fg-sec text-2xl max-w-3xl">
-              If you’re working on systems that require clarity, reliability, or
-              real-time architecture - let’s talk.
-            </p>
+          </div>
+          <div className="flex justify-center">
+            <div className="flex justify-center items-center space-x-4">
+              <Button
+                size="lg"
+                className="min-w-40 min-h-14 cursor-pointer bg-accent text-white hover:bg-[#E5B715] border border-[#FEE17B]"
+              >
+                Email Me
+              </Button>
+              <Button
+                variant="outline"
+                size="lg"
+                className="min-w-40 min-h-14 text-fg-main hover:text-white cursor-pointer"
+              >
+                View Resume
+              </Button>
+            </div>
+          </div>
+          <div className="flex justify-center items-center">
+            <ContactSection />
           </div>
         </div>
-        <div className="flex justify-center">
-          <div className="flex justify-center items-center space-x-4">
-            <Button
-              size="lg"
-              className="min-w-40 min-h-14 cursor-pointer bg-accent text-white hover:bg-[#E5B715] border border-[#FEE17B]"
-            >
-              Email Me
-            </Button>
-            <Button
-              variant="outline"
-              size="lg"
-              className="min-w-40 min-h-14 text-fg-main hover:text-white cursor-pointer"
-            >
-              View Resume
-            </Button>
-          </div>
-        </div>
-        <div className="flex justify-center items-center">
-          <ContactSection />
-        </div>
-      </section>
+      </Section>
     </>
   );
 };
