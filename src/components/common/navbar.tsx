@@ -31,9 +31,11 @@ const Nav = () => {
 
 export const Navbar = () => {
   return (
-    <div className="py-4 flex justify-between items-center font-head-main">
-      <NavLogo />
-      <Nav />
+    <div className="sticky top-0 z-50 bg-background-light/70 backdrop-blur-sm flex justify-center">
+      <div className="w-full py-4 flex justify-between items-center font-head-main md:px-8 lg:px-0 lg:max-w-4xl xl:max-w-6xl">
+        <NavLogo />
+        <Nav />
+      </div>
     </div>
   );
 };
