@@ -1,15 +1,33 @@
 const NAVIGATION_LIST = [
-  ["About", "#"],
-  ["Skill", "#"],
-  ["Showcase", "#"],
-  ["Contact", "#"],
+  ["About", "about"],
+  ["Skill", "skill"],
+  ["Showcase", "showcase"],
+  ["Contact", "contact"],
 ] as const;
+
+const scrollToSection = (sectionID: string) => {
+  window.history.pushState(null, "", `#${sectionID}`);
+
+  const elm = document.getElementById(sectionID);
+  if (elm) {
+    elm.scrollIntoView({ behavior: "smooth" });
+  }
+};
 
 const NavLogo = () => {
   return (
     <a
-      href="#"
+      href="/"
       className="flex flex-col -space-y-2 md:-space-y-3 font-semibold md:text-xl"
+      onClick={(e) => {
+        e.preventDefault();
+        window.scrollTo({
+          top: 0,
+          left: 0,
+          behavior: "smooth",
+        });
+        window.history.pushState(null, "", "/");
+      }}
     >
       <span>mr.</span>
       <span className="text-accent">bananaaa</span>
@@ -20,8 +38,15 @@ const NavLogo = () => {
 const Nav = () => {
   return (
     <nav className="hidden md:flex space-x-8 text-sm">
-      {NAVIGATION_LIST.map(([title, link], i) => (
-        <a key={i} href={link}>
+      {NAVIGATION_LIST.map(([title, section], i) => (
+        <a
+          key={i}
+          href={`#${section}`}
+          onClick={(e) => {
+            e.preventDefault();
+            scrollToSection(section);
+          }}
+        >
           {title}
         </a>
       ))}

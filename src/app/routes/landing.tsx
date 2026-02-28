@@ -80,7 +80,7 @@ const ContactSection = () => {
 const LandingRoute = () => {
   return (
     <>
-      <Section>
+      <Section sectionID="">
         <div className="flex flex-col space-y-2">
           <h1 className="flex flex-col font-head-main font-semibold text-fg-main text-4xl md:text-7xl lg:text-8xl xl:text-9xl 2xl:text-[160px]">
             <span>Passionate</span>
@@ -93,7 +93,7 @@ const LandingRoute = () => {
         </div>
       </Section>
       <LineBreak />
-      <Section>
+      <Section sectionID="about">
         <div className="flex flex-col space-y-8">
           <div className="font-head-sec font-medium text-2xl md:text-6xl lg:text-5xl max-w-3xl leading-snug">
             <span className="text-accent">Full-Stack Engineer</span> focused on
@@ -107,7 +107,7 @@ const LandingRoute = () => {
         </div>
       </Section>
       <LineBreak />
-      <Section>
+      <Section sectionID="skill">
         <div className="flex flex-col space-y-14 py-12">
           <div className="flex flex-col space-y-6">
             <h4 className="font-head-sec text-accent text-xl md:text-2xl">
@@ -123,7 +123,7 @@ const LandingRoute = () => {
         </div>
       </Section>
       <LineBreak />
-      <Section>
+      <Section sectionID="showcase">
         <div className="flex flex-col space-y-10 w-full">
           <SectionTitle title="Selected Works" />
           <div className="bg-gray-300 flex justify-center items-center h-[60svh] rounded-2xl">
@@ -134,7 +134,7 @@ const LandingRoute = () => {
         </div>
       </Section>
       <LineBreak />
-      <Section>
+      <Section sectionID="contact">
         <div className="w-full flex flex-col space-y-12">
           <div className="flex flex-col items-center">
             <div className="flex flex-col space-y-4">
