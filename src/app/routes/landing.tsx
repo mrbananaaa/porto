@@ -83,9 +83,20 @@ const LandingRoute = () => {
     <>
       <Section sectionID="">
         <div className="flex flex-col space-y-2">
-          <h1 className="flex flex-col font-head-main font-semibold text-fg-main text-4xl md:text-7xl lg:text-8xl xl:text-9xl 2xl:text-[160px] min-h-28 md:min-h-44 lg:min-h-56 xl:min-h-72 tracking-tighter">
-            <LandingText />
-          </h1>
+          <div className="relative min-w-[80svw]">
+            <h1 className="flex flex-col font-head-main font-semibold text-fg-main text-4xl md:text-7xl lg:text-8xl xl:text-9xl 2xl:text-[160px] min-h-28 md:min-h-44 lg:min-h-56 xl:min-h-72 tracking-tighter">
+              <LandingText />
+            </h1>
+            <div className="absolute -top-20 right-0">
+              <img
+                src="/src/assets/logo-text.svg"
+                alt=""
+                className="animate-logo-spin"
+                width={120}
+                height={120}
+              />
+            </div>
+          </div>
           <p className="font-paragraph font-light italic text-fg-sec text-xs md:text-xl">
             ~ <span className="text-accent">mr.bananaaaa</span> with a couple of
             ChatGPT prompt.

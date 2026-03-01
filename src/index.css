@@ -127,6 +127,7 @@
 
   --animate-bacground-shrink: background-shrink 600ms linear forwards;
   --animate-logo-transition: logo-transition 2s forwards;
+  --animate-logo-spin: spin 8s linear infinite;
 
   @keyframes background-shrink {
     0% {
