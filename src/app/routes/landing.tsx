@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Section } from "@/components/common/section";
 import { SectionParagraph, SectionTitle } from "@/components/common/typography";
 import { LandingText } from "@/components/common/landing-text";
+import textLogo from "@/assets/logo-text.svg";
 
 const PLATFORM_SECTION = [
   [
@@ -89,7 +90,7 @@ const LandingRoute = () => {
             </h1>
             <div className="absolute -top-20 right-0">
               <img
-                src="/src/assets/logo-text.svg"
+                src={textLogo}
                 alt=""
                 className="animate-logo-spin"
                 width={120}
