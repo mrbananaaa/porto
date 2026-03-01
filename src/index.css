@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
@@ -116,14 +116,65 @@
 }
 
 @theme {
-  --color-background-light: #F0F0F0;
-  --color-accent: #FFCE20;
+  --color-background-light: #f0f0f0;
+  --color-accent: #ffce20;
   --color-fg-main: #111111;
-  --color-fg-sec: #5E5E5E;
+  --color-fg-sec: #5e5e5e;
 
   --font-head-main: "Epilogue", sans-serif;
   --font-head-sec: "Montserrat", sans-serif;
   --font-paragraph: "Inter", sans-serif;
+
+  --animate-bacground-shrink: background-shrink 600ms linear forwards;
+  --animate-logo-transition: logo-transition 2s forwards;
+
+  @keyframes background-shrink {
+    0% {
+      width: 100%;
+      height: 100%;
+    }
+    50% {
+      width: 440px;
+      height: 440px;
+      border-radius: 9999px;
+    }
+    90% {
+      width: 220px;
+      height: 220px;
+      border-radius: 9999px;
+    }
+    100% {
+      width: 0%;
+      height: 0%;
+    }
+  }
+
+  @keyframes logo-transition {
+    0% {
+      width: 0%;
+      height: 0%;
+      background-image: url("/src/assets/logo-light.svg");
+      opacity: 1;
+    }
+    60% {
+      width: 220px;
+      height: 220px;
+      background-image: url("/src/assets/logo-light.svg");
+    }
+    61%,
+    80% {
+      width: 280px;
+      height: 280px;
+      background-image: url("/src/assets/logo-dark.svg");
+      opacity: 1;
+    }
+    100% {
+      width: 0%;
+      height: 0%;
+      background-image: url("/src/assets/logo-dark.svg");
+      opacity: 0;
+    }
+  }
 }
 
 @layer base {

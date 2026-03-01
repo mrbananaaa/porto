@@ -2,6 +2,7 @@ import { LineBreak } from "@/components/common/line-break";
 import { Button } from "@/components/ui/button";
 import { Section } from "@/components/common/section";
 import { SectionParagraph, SectionTitle } from "@/components/common/typography";
+import { LandingText } from "@/components/common/landing-text";
 
 const PLATFORM_SECTION = [
   [
@@ -82,9 +83,8 @@ const LandingRoute = () => {
     <>
       <Section sectionID="">
         <div className="flex flex-col space-y-2">
-          <h1 className="flex flex-col font-head-main font-semibold text-fg-main text-4xl md:text-7xl lg:text-8xl xl:text-9xl 2xl:text-[160px]">
-            <span>Passionate</span>
-            <span>Craftsmanship,</span>
+          <h1 className="flex flex-col font-head-main font-semibold text-fg-main text-4xl md:text-7xl lg:text-8xl xl:text-9xl 2xl:text-[160px] min-h-28 md:min-h-44 lg:min-h-56 xl:min-h-72 tracking-tighter">
+            <LandingText />
           </h1>
           <p className="font-paragraph font-light italic text-fg-sec text-xs md:text-xl">
             ~ <span className="text-accent">mr.bananaaaa</span> with a couple of
