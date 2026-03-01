@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react";
+
 const NAVIGATION_LIST = [
   ["About", "about"],
   ["Skill", "skill"],
@@ -36,8 +38,28 @@ const NavLogo = () => {
 };
 
 const Nav = () => {
+  const [activeSection, setActiveSection] = useState("/");
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      { threshold: 0.5 },
+    );
+
+    const section = document.querySelectorAll("section[id]");
+    section.forEach((section) => observer.observe(section));
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <nav className="hidden md:flex space-x-8 text-sm">
+    <nav className="hidden md:flex space-x-8 text-sm font-head-main">
       {NAVIGATION_LIST.map(([title, section], i) => (
         <a
           key={i}
@@ -46,6 +68,11 @@ const Nav = () => {
             e.preventDefault();
             scrollToSection(section);
           }}
+          className={
+            activeSection === section
+              ? "text-fg-main font-medium"
+              : "text-fg-sec"
+          }
         >
           {title}
         </a>
