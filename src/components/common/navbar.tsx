@@ -70,7 +70,7 @@ const Nav = () => {
           }}
           className={
             activeSection === section
-              ? "text-fg-main font-medium"
+              ? "text-accent font-medium"
               : "text-fg-sec"
           }
         >
