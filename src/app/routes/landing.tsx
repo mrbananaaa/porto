@@ -88,7 +88,7 @@ const LandingRoute = () => {
             <h1 className="flex flex-col font-head-main font-semibold text-fg-main text-4xl md:text-7xl lg:text-8xl xl:text-9xl 2xl:text-[160px] min-h-28 md:min-h-44 lg:min-h-56 xl:min-h-72 tracking-tighter">
               <LandingText />
             </h1>
-            <div className="absolute -top-20 right-0">
+            <div className="absolute -top-36 -right-30">
               <img
                 src={textLogo}
                 alt=""
@@ -160,12 +160,14 @@ const LandingRoute = () => {
           <div className="font-head-main flex flex-col justify-center space-y-6">
             <div className="flex justify-center">
               <div className="flex justify-center items-center space-x-4">
-                <Button
-                  size="lg"
-                  className="min-w-40 min-h-14 cursor-pointer bg-accent text-white hover:bg-[#E5B715] border border-[#FEE17B]"
-                >
-                  Email Me
-                </Button>
+                <a href="mailto:mailme.mrbananaaaid@gmail.com" target="_blank">
+                  <Button
+                    size="lg"
+                    className="min-w-40 min-h-14 cursor-pointer bg-accent text-white hover:bg-[#E5B715] border border-[#FEE17B]"
+                  >
+                    Email Me
+                  </Button>
+                </a>
                 <Button
                   variant="outline"
                   size="lg"
